@@ -28,17 +28,17 @@ if '__main__' == __name__:
     s5.cmd("ifconfig s5-eth2 0")
     s5.cmd("ifconfig s5-eth3 0")
 
-    s5.cmd("brct1 addbr vlan10")
+    s5.cmd("brctl addbr vlan10")
     s5.cmd("ifconfig vlan10 up")
 
-    s5.cmd("brct1 addbr vlan20")
+    s5.cmd("brctl addbr vlan20")
     s5.cmd("ifconfig vlan20 up")
 
-    s5.cmd("brct1 addif vlan10 s5-eth0")
-    s5.cmd("brct1 addif vlan10 s5-eth1")
+    s5.cmd("brctl addif vlan10 s5-eth0")
+    s5.cmd("brctl addif vlan10 s5-eth1")
 
-    s5.cmd("brct1 addif vlan20 s5-eth2")
-    s5.cmd("brct1 addif vlan20 s5-eth3")
+    s5.cmd("brctl addif vlan20 s5-eth2")
+    s5.cmd("brctl addif vlan20 s5-eth3")
 
     h1.cmd("ifconfig h1-eth0 10.0.10.1 netmask 255.255.255.0")
     h2.cmd("ifconfig h2-eth0 10.0.10.2 netmask 255.255.255.0")
