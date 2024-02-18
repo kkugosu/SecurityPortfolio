@@ -101,6 +101,7 @@ server_addr.sin_family = AF_INET;
 if (bind(master_socket_num, (struct sockaddr *)&server_addr, addr_len) == -1){
     printf("socket bind fail");
 }
+
 if (listen(master_socket_num, 5)<0)  
     {
         printf("listen failed\n");
@@ -130,7 +131,8 @@ while(1){
         int i = 0, common_socket_num = -1;
         for(; i < MAX_CLIENT_SUPPORTED; i++){
 
-            if(FD_ISSET(monitored_fd_set[i], &readfds)){
+            if(FD_ISSET(monitored_fd_set[i], &readfds))
+            {
                 printf("recv data from %d\n", monitored_fd_set[i]);
                 common_socket_num = monitored_fd_set[i];
                 memset(data_buffer, 0, sizeof(data_buffer));
@@ -141,7 +143,6 @@ while(1){
 
                         close(common_socket_num);
                         remove_from_monitored_fd_set(common_socket_num, monitored_fd_set);
-                        
                         break;
                 }
                 result_struct_t result;
