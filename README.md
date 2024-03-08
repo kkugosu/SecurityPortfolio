@@ -1,6 +1,6 @@
-# Security Portfolio
+# Server Portfolio
 
-Welcome to my Security Portfolio! This repository showcases my skills and projects related to various aspects of network security and cloud security. Here's a brief overview of what you can find in this portfolio:
+Welcome to my Server Portfolio! This repository showcases my skills and projects related to various aspects of network and cloud security. Here's a brief overview of what you can find in this portfolio:
 
 ## 1. Basic Network
 
